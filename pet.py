@@ -45,4 +45,5 @@ class Pet():
         if self.name == 'billy':
             return self.dog
         else:
+            print('hi!')
             return self.cat
