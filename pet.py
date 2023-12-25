@@ -1,21 +1,48 @@
 class Pet():
+    """Return pet's species, when input pet's name.
 
-    def __init__(self):
-        '''
-        ========================================
-        input : "name" -> output : species  
-        ========================================    
-        '''
-        self.dog='dog'
-        self.cat='cat'
-        
-    def print_species(self, name):
-        '''
-        input : 'billy' -> output : 'dog'
-        input : others -> output : 'cat'
-        '''
-        if type(name)!=type('a'):
-            raise TypeError('Please input strings.')
-        if name.lower()=='billy':
-            print(f'{name} is a {self.dog}.')
-        else : print(f'{name} is a {self.cat}.')
+    Parameters
+    ----------
+    name : str
+        The name for the Pets
+
+    Attributes
+    ----------
+    name : str
+        This is where we store pet's name
+    dog : str
+    cat : str
+    """
+
+    def __init__(
+        self,
+        name: str,
+    ):
+        if isinstance(name, str):
+            raise TypeError('Please input string.')
+
+        self.name = name.lower()
+        self.dog = 'dog'
+        self.cat = 'cat'
+
+    def print_species(
+        self,
+    ) -> str:
+        """Return pet's species.
+
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        species : str
+
+        Examples
+        --------
+        pet.print_species -> 'dog'
+        """
+        if self.name == 'billy':
+            return self.dog
+        else:
+            return self.cat
